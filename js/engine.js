@@ -195,6 +195,15 @@ function displayWins(){
     winsAmount();
 };
 
+//Display collected crystals
+function displayCrystals(){
+    ctx.font="20px Georgia";
+    ctx.strokeText("Crystals: ", 390, 50); 
+    crystalAmount();  
+}
+
 displayWins();
+
+displayCrystals();
 
 

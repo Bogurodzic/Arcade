@@ -17,6 +17,9 @@ Enemy.prototype.update = function(dt) {
     	wins = 0;
     	winsAmount();
         player.reset();
+        crystal.reset();
+        crystalCollected = 0;
+		crystalAmount();
     }
     //reset position of the bug if it will end its route
     if (this.x >= 505){
@@ -47,9 +50,14 @@ Crystal.prototype.reset = function(){
 	this.y = crystalY[(Math.floor(Math.random()*3))];
 };
 
+//Remove the crystal from the stage if player collects it
+//Add one to crystalCollected
 Crystal.prototype.update = function(){
 	if(player.x < this.x+75 && player.x > this.x-25 && player.y < this.y + 20 && player.y > this.y-85){
-		this.reset();
+		this.x = -50;
+		this.y = -50;
+		crystalCollected += 1;
+		crystalAmount();
 	}
 };
 
@@ -62,6 +70,17 @@ function winsAmount(){
 	ctx.fillRect(70,20,150,100);
 	ctx.font = "20px Georgia";
     ctx.strokeText(wins,70,49);
+};
+
+//crystal amount variable 
+var crystalCollected = 0; 
+
+//displays crystals amount
+function crystalAmount(){
+	ctx.fillStyle = "white";
+	ctx.fillRect(470,20,150,100);
+	ctx.font = "20px Georgia";
+    ctx.strokeText(crystalCollected, 470, 49);
 };
 
 // Draw the enemy on the screen
@@ -82,12 +101,14 @@ Player.prototype.reset = function(){
 };
 
 //Update player position if he will reach final destination
-//and increasing his wins amount by 1
+//Reset the crystal position
+//and increase wins amount by 1
 Player.prototype.update = function(){
     if (this.y <= 0) {
     	wins += 1;
     	winsAmount();
         this.reset();
+        crystal.reset();
     }
 };
 

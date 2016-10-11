@@ -1,14 +1,17 @@
 # Arcade Game
 
 Udacity arcade game project
-<hr>
 
 ### How to run the game
 
-
 Clone the repo, navigate to the directory and open index.html in your browser.
 
-### How to play the game
+### Rules
 
+Collect crystals to make yourself rich and reach the river to escape from big bad bugs.
+How many wins and crystals can you get before bugs get you?
 
-Use arrows to navigate the player and try do avoid scary bugs.
+### Controls
+
+Use arrow keys to move your character.
+
