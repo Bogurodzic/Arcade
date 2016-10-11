@@ -14,6 +14,7 @@
  * a little simpler to work with.
  */
 
+
 var Engine = (function(global) {
     /* Predefine the variables we'll be using within this scope,
      * create the canvas element, grab the 2D context for that canvas
@@ -95,6 +96,7 @@ var Engine = (function(global) {
             enemy.update(dt);
         });
         player.update();
+        crystal.update();
     }
 
     /* This function initially draws the "game level", it will then call
@@ -152,6 +154,9 @@ var Engine = (function(global) {
         });
 
         player.render();
+        crystal.render();
+
+
     }
 
     /* This function does nothing but it could have been a good place to
@@ -171,7 +176,8 @@ var Engine = (function(global) {
         'images/water-block.png',
         'images/grass-block.png',
         'images/enemy-bug.png',
-        'images/char-princess-girl.png'
+        'images/char-princess-girl.png',
+        'images/Gem-Orange.png'
     ]);
     Resources.onReady(init);
 
@@ -181,4 +187,14 @@ var Engine = (function(global) {
      */
     global.ctx = ctx;
 })(this);
+
+//Display "Wins:"
+function displayWins(){
+    ctx.font="20px Georgia";
+    ctx.strokeText("Wins: ",10,50);
+    winsAmount();
+};
+
+displayWins();
+
 
