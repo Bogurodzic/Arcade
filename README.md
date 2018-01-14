@@ -1,7 +1,7 @@
 # Arcade Game
 
 Udacity arcade game project
-Live version: [[link]](http://kamiljarzab.pl/Projekty/Arcade/)
+Live version: [[link]](http://kamil.webheroes.io/Projekty/Arcade/)
 
 ### How to run the game
 
